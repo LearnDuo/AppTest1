@@ -14,5 +14,15 @@ namespace AppTest1.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult PlanLekcji()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Galeria()
+        {
+            return View();
+        }
     }
 }
