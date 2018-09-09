@@ -1,15 +1,12 @@
 ﻿<style>
     * {
-        box-sizing:border-box;
-    }
-    body {
-        background-color: seagreen;
+        box-sizing: border-box;
     }
 
     h2 {
         color: darkgoldenrod;
         text-align: center;
-        font-size: large;
+        font-size: 20px;
         font-family: Gadugi;
     }
 
@@ -18,7 +15,7 @@
         background-color: black;
         color: floralwhite;
         border: 2px solid blue;
-        width:20%;
+        width: 20%;
     }
 
     table {
@@ -26,6 +23,9 @@
         float: left;
     }
 
+    button {
+        display:block;
+    }
     @@media screen and (max-width:500px) {
         table {
             width: 100%;
@@ -118,4 +118,5 @@
         <th>WF</th>
     </tr>
 </table>
+<button onclick="location.href='@Url.Action("Index","Home")'">Wróć</button>
 
