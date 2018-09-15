@@ -1,121 +1,149 @@
-﻿<style>
-    * {
-        box-sizing: border-box;
-    }
+﻿@model AppTest1.Models.ViewModels.HomeViewModel
+<html>
+<head>
 
-    h2 {
-        text-align: center;
-        font-size: 20px;
-        font-family: Gadugi;
-    }
 
-    table, th, td {
-        border-collapse: collapse;
-        border: 1px solid black;
-        width: 20%;
-    }
-
-    table {
-        display: inline;
-        float: left;
-    }
-
-    button {
-        display: block;
-    }
-
-    @@media screen and (max-width:500px) {
-        table {
-            width: 100%;
+    <style>
+        * {
+            box-sizing: border-box;
         }
+
+        h2 {
+            text-align: center;
+            font-size: 20px;
+            font-family: Gadugi;
+        }
+
+        table, th, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 20%;
+        }
+
+        table {
+            display: inline;
+            float: left;
+        }
+
+        button {
+            display: block;
+        }
+
+        @@media screen and (max-width:500px) {
+            table {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Plan Lekcji</h2>
+    <table id="monday"> 
+        <tbody>
+            <tr>
+                <th>Poniedziałek</th>
+            </tr>
+           
+        </tbody>
+    </table>
+    <!--<table>
+        <tr>
+            <th>Poniedziałek</th>
+        </tr>
+        <tr>
+            <th>Matematyka</th>
+        </tr>
+        <tr>
+            <th>Język Polski</th>
+        </tr>
+        <tr>
+            <th>Geografia</th>
+        </tr>
+        <tr>
+            <th>WF</th>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Poniedziałek</th>
+        </tr>
+        <tr>
+            <th>Matematyka</th>
+        </tr>
+        <tr>
+            <th>Język Polski</th>
+        </tr>
+        <tr>
+            <th>Geografia</th>
+        </tr>
+        <tr>
+            <th>WF</th>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Poniedziałek</th>
+        </tr>
+        <tr>
+            <th>Matematyka</th>
+        </tr>
+        <tr>
+            <th>Język Polski</th>
+        </tr>
+        <tr>
+            <th>Geografia</th>
+        </tr>
+        <tr>
+            <th>WF</th>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Poniedziałek</th>
+        </tr>
+        <tr>
+            <th>Matematyka</th>
+        </tr>
+        <tr>
+            <th>Język Polski</th>
+        </tr>
+        <tr>
+            <th>Geografia</th>
+        </tr>
+        <tr>
+            <th>WF</th>
+        </tr>
+    </table> -->
+
+    <button onclick="location.href='@Url.Action("Index", "Home")'">Wróć</button>
+    </body>
+</html>
+<script>
+    $(document).ready(
+        function () {
+
+            var monday = @Html.Raw(JsonConvert.SerializeObject(Model.Monday));
+
+            for (var i = 0; i < monday.length; i++) {
+                addRowToTable(monday[i]);
+
+            }
+            
+        }
+
+    );
+
+    function addRowToTable(wartosc) {
+        $("#monday").append("<tr><td>"+wartosc+"</td></tr>");
+       
     }
-</style>
-<h2>Plan Lekcji</h2>
-<table>
-    <tr>
-        <th>Poniedziałek</th>
-    </tr>
-    <tr>
-        <th>Matematyka</th>
-    </tr>
-    <tr>
-        <th>Język Polski</th>
-    </tr>
-    <tr>
-        <th>Geografia</th>
-    </tr>
-    <tr>
-        <th>WF</th>
-    </tr>
-</table>
-<!--<table>
-    <tr>
-        <th>Poniedziałek</th>
-    </tr>
-    <tr>
-        <th>Matematyka</th>
-    </tr>
-    <tr>
-        <th>Język Polski</th>
-    </tr>
-    <tr>
-        <th>Geografia</th>
-    </tr>
-    <tr>
-        <th>WF</th>
-    </tr>
-</table>
-<table>
-    <tr>
-        <th>Poniedziałek</th>
-    </tr>
-    <tr>
-        <th>Matematyka</th>
-    </tr>
-    <tr>
-        <th>Język Polski</th>
-    </tr>
-    <tr>
-        <th>Geografia</th>
-    </tr>
-    <tr>
-        <th>WF</th>
-    </tr>
-</table>
-<table>
-    <tr>
-        <th>Poniedziałek</th>
-    </tr>
-    <tr>
-        <th>Matematyka</th>
-    </tr>
-    <tr>
-        <th>Język Polski</th>
-    </tr>
-    <tr>
-        <th>Geografia</th>
-    </tr>
-    <tr>
-        <th>WF</th>
-    </tr>
-</table>
-<table>
-    <tr>
-        <th>Poniedziałek</th>
-    </tr>
-    <tr>
-        <th>Matematyka</th>
-    </tr>
-    <tr>
-        <th>Język Polski</th>
-    </tr>
-    <tr>
-        <th>Geografia</th>
-    </tr>
-    <tr>
-        <th>WF</th>
-    </tr>
-</table> -->
+   
+    /*function addRowToTable(wartosc, indeks) {
+        var table = document.getElementById("monday"); 
+        var row = table.insertRow(indeks);
+        var cell = row.insertCell(0);
+        cell.innerHTML = wartosc;
+    }*/
 
-<button onclick="location.href='@Url.Action("Index","Home")'">Wróć</button>
-
+    
+</script>
