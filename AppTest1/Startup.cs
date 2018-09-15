@@ -31,10 +31,11 @@ namespace AppTest1
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
 
-                services.AddScoped<ITableRepository, TableRepository>();
+
+
             });
 
-
+            services.AddScoped<ITableRepository, TableRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
