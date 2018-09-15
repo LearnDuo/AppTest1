@@ -1,29 +1,27 @@
 ﻿<style>
     * {
-        box-sizing:border-box;
-    }
-    body {
-        background-color: seagreen;
+        box-sizing: border-box;
     }
 
     h2 {
-        color: darkgoldenrod;
         text-align: center;
-        font-size: large;
+        font-size: 20px;
         font-family: Gadugi;
     }
 
     table, th, td {
         border-collapse: collapse;
-        background-color: black;
-        color: floralwhite;
-        border: 2px solid blue;
-        width:20%;
+        border: 1px solid black;
+        width: 20%;
     }
 
     table {
         display: inline;
         float: left;
+    }
+
+    button {
+        display: block;
     }
 
     @@media screen and (max-width:500px) {
@@ -50,7 +48,7 @@
         <th>WF</th>
     </tr>
 </table>
-<table>
+<!--<table>
     <tr>
         <th>Poniedziałek</th>
     </tr>
@@ -117,5 +115,7 @@
     <tr>
         <th>WF</th>
     </tr>
-</table>
+</table> -->
+
+<button onclick="location.href='@Url.Action("Index","Home")'">Wróć</button>
 
