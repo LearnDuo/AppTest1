@@ -24,5 +24,10 @@ namespace AppTest1.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult HistoriaSzkoły()
+        {
+            return View();
+        }
     }
 }
