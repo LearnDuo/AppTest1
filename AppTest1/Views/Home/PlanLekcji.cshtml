@@ -38,112 +38,64 @@
 </head>
 <body>
     <h2>Plan Lekcji</h2>
-    <table id="monday"> 
-        <tbody>
+    <table id="monday">
             <tr>
                 <th>Poniedziałek</th>
             </tr>
-           
-        </tbody>
     </table>
-    <!--<table>
-        <tr>
-            <th>Poniedziałek</th>
-        </tr>
-        <tr>
-            <th>Matematyka</th>
-        </tr>
-        <tr>
-            <th>Język Polski</th>
-        </tr>
-        <tr>
-            <th>Geografia</th>
-        </tr>
-        <tr>
-            <th>WF</th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th>Poniedziałek</th>
-        </tr>
-        <tr>
-            <th>Matematyka</th>
-        </tr>
-        <tr>
-            <th>Język Polski</th>
-        </tr>
-        <tr>
-            <th>Geografia</th>
-        </tr>
-        <tr>
-            <th>WF</th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th>Poniedziałek</th>
-        </tr>
-        <tr>
-            <th>Matematyka</th>
-        </tr>
-        <tr>
-            <th>Język Polski</th>
-        </tr>
-        <tr>
-            <th>Geografia</th>
-        </tr>
-        <tr>
-            <th>WF</th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <th>Poniedziałek</th>
-        </tr>
-        <tr>
-            <th>Matematyka</th>
-        </tr>
-        <tr>
-            <th>Język Polski</th>
-        </tr>
-        <tr>
-            <th>Geografia</th>
-        </tr>
-        <tr>
-            <th>WF</th>
-        </tr>
-    </table> -->
-
     <button onclick="location.href='@Url.Action("Index", "Home")'">Wróć</button>
-    </body>
+</body>
 </html>
 <script>
-    $(document).ready(
-        function () {
 
-            var monday = @Html.Raw(JsonConvert.SerializeObject(Model.Monday));
 
-            for (var i = 0; i < monday.length; i++) {
-                addRowToTable(monday[i]);
 
-            }
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*$(document).ready(function () {
+        ajaxCall();
+    });
+
+    function addRowsToTable(lista) {
+        for (var i = 0; i < lista.length; i++) {
+            $("#monday").append("<tr><td>" + lista[i] + "</td></tr>");
         }
-
-    );
-
-    function addRowToTable(wartosc) {
-        $("#monday").append("<tr><td>"+wartosc+"</td></tr>");
-       
     }
-   
-    /*function addRowToTable(wartosc, indeks) {
-        var table = document.getElementById("monday"); 
-        var row = table.insertRow(indeks);
-        var cell = row.insertCell(0);
-        cell.innerHTML = wartosc;
-    }*/
+
+    function ajaxCall() {
+    $.ajax({
+        type: 'GET',
+        url: '@Url.Action("Monday", "Home")',
+        success: function (result) {
+            addRowsToTable(result);
+        }
+        });
+    }
+
+        function ajaxPost(pierwsze, drugie) {
+        $.ajax({
+        type: 'POST',
+        url: '@Url.Action("PlanLekcji", "Home")',
+        data: { first: pierwsze, second: drugie},
+        success: function (result) {
+            addRowsToTable(result);
+        }
+        });
+    }*@
 
     
 </script>

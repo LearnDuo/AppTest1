@@ -30,11 +30,16 @@ namespace AppTest1.Controllers
             return View(homeViewModel);
         }
         [HttpPost]
-        public IActionResult PlanLekcji([FromBody] string jeden, [FromBody] string dwa)
+        public IActionResult PlanLekcji(string first, string second)
         {
-            var homeViewModel = new HomeViewModel();
-            homeViewModel.Monday = new List<string>() { new string(jeden), new string(dwa) };
-            return View(homeViewModel);
+            var list = new List<string>() { new string(first), new string(second) };
+            return Json(list);
+        }
+        [HttpGet]
+        public IActionResult Monday()
+        {
+            var monday = _tableRepository.GetMonday();
+            return Json(monday);
         }
         [HttpGet]
         public IActionResult Galeria()
