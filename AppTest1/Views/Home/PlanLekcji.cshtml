@@ -39,18 +39,33 @@
 <body>
     <h2>Plan Lekcji</h2>
     <table id="monday">
-            <tr>
-                <th>Poniedziałek</th>
-            </tr>
+        <tr>
+            <th>Poniedziałek</th>
+        </tr>
+       
     </table>
     <button onclick="location.href='@Url.Action("Index", "Home")'">Wróć</button>
+    <button onclick="ajaxCall()">Qtas</button>
 </body>
 </html>
 <script>
+    $(document).ready(ajaxCall())
+    
+    function ajaxCall() {
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("Monday", "Home")',
+            success: function (result) {
+                table(result);   
+            }
+            });
+    }
 
-
-
-
+    function table(lista) {
+        for (var i = 0; i < lista.length; i++) {
+            $('#monday').append('<tr><th>' + lista[i]+'</th></tr>')
+        }
+    }
 
 
 
